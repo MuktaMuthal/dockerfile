@@ -1,8 +1,6 @@
-FROM docker.io/ubuntu 
-RUN apt-get update -y 
-RUN  touch  file{1..10}.txt
-RUN mkdir dir1
+FROM docker.io/ubuntu
+
 RUN apt update -y
-RUN apt install apache2 -y
-RUN  echo "Hello world " > /var/www/html/index.html
-CMD ["apache2ctl","-D","FOREGROUND"]
+RUN apt install iputils-ping -y
+
+CMD ["ping","google.com"]
